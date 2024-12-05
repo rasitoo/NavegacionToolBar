@@ -1,0 +1,51 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navegaciontoolbar.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_action_uno"
+            app:destination="@id/action_uno" />
+        <action
+            android:id="@+id/action_homeFragment_to_action_dos"
+            app:destination="@id/action_dos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_uno"
+        android:name="com.example.navegaciontoolbar.ui.Uno_Fragment"
+        android:label="fragment_uno_"
+        tools:layout="@layout/fragment_uno_">
+        <action
+            android:id="@+id/action_action_uno_to_action_dos"
+            app:destination="@id/action_dos" />
+        <action
+            android:id="@+id/action_action_uno_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_dos"
+        android:name="com.example.navegaciontoolbar.ui.Dos_Fragment"
+        android:label="fragment_dos_"
+        tools:layout="@layout/fragment_dos_">
+        <action
+            android:id="@+id/action_action_dos_to_action_uno"
+            app:destination="@id/action_uno" />
+        <action
+            android:id="@+id/action_action_dos_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.navegaciontoolbar.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>
